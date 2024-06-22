@@ -1,8 +1,11 @@
-import requests, re, json, os
+import requests, re, json, os, sys
 from PIL import Image
 
-URL         = "https://online.anyflip.com/icso/eprm/mobile/"
-PDF_PATH    = "pdf.pdf"
+
+# book_id = "/ucndi/pczo/"
+book_id = sys.argv[1].strip("/")
+URL = f"https://online.anyflip.com/{book_id}/mobile/"
+PDF_PATH = "pdf.pdf"
 
 if not os.path.exists(r'images'):
     os.makedirs(r'images' )
